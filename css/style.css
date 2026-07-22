@@ -1,1 +1,293 @@
+/* ==========================================
+   ITALY GRAND TOUR
+   Version 1.0
+========================================== */
 
+:root{
+
+    --cream:#F8F4EC;
+    --stone:#E8E0D3;
+    --burgundy:#6C1F2D;
+    --olive:#6B7D3B;
+    --terracotta:#C86A3D;
+    --charcoal:#2F2F2F;
+    --white:#ffffff;
+
+    --radius:18px;
+
+    --shadow:
+        0 10px 30px rgba(0,0,0,.08);
+
+}
+
+/* ---------- RESET ---------- */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    background:var(--cream);
+
+    color:var(--charcoal);
+
+    font-family:Inter,sans-serif;
+
+    line-height:1.6;
+
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+
+    background:linear-gradient(
+        180deg,
+        #7B2334,
+        #5E1926
+    );
+
+    color:white;
+
+    text-align:center;
+
+    padding:70px 20px;
+
+}
+
+.hero h1{
+
+    font-family:"Cormorant Garamond",serif;
+
+    font-size:56px;
+
+    font-weight:700;
+
+}
+
+.subtitle{
+
+    margin-top:15px;
+
+    font-size:20px;
+
+    opacity:.9;
+
+}
+
+#startJourney{
+
+    margin-top:35px;
+
+    background:white;
+
+    color:var(--burgundy);
+
+    border:none;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#startJourney:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ---------- TIMELINE ---------- */
+
+.timeline{
+
+    display:flex;
+
+    overflow-x:auto;
+
+    gap:12px;
+
+    padding:18px;
+
+    background:white;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.05);
+
+}
+
+.timeline button{
+
+    border:none;
+
+    background:var(--stone);
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    white-space:nowrap;
+
+    transition:.2s;
+
+}
+
+.timeline button:hover{
+
+    background:var(--terracotta);
+
+    color:white;
+
+}
+
+/* ---------- MAIN ---------- */
+
+main{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:30px;
+
+}
+
+/* ---------- MAP ---------- */
+
+#map{
+
+    height:520px;
+
+    border-radius:var(--radius);
+
+    overflow:hidden;
+
+    background:#ddd;
+
+    box-shadow:var(--shadow);
+
+}
+
+/* ---------- ITINERARY ---------- */
+
+#itinerary{
+
+    background:white;
+
+    margin-top:30px;
+
+    border-radius:var(--radius);
+
+    padding:30px;
+
+    box-shadow:var(--shadow);
+
+}
+
+#itinerary h2{
+
+    color:var(--burgundy);
+
+    margin-bottom:12px;
+
+}
+
+/* ---------- FOOTER ---------- */
+
+footer{
+
+    position:fixed;
+
+    bottom:0;
+
+    left:0;
+
+    right:0;
+
+    background:white;
+
+    display:flex;
+
+    justify-content:space-around;
+
+    padding:15px;
+
+    box-shadow:0 -3px 15px rgba(0,0,0,.08);
+
+}
+
+footer button{
+
+    background:none;
+
+    border:none;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+.hero{
+
+padding:50px 20px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.subtitle{
+
+font-size:17px;
+
+}
+
+#map{
+
+height:350px;
+
+}
+
+main{
+
+padding:18px;
+
+}
+
+}
