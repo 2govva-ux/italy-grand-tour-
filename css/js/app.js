@@ -1,27 +1,41 @@
-const buttons = document.querySelectorAll(".timeline button");
 const itineraryBox = document.getElementById("itinerary");
+const buttons = document.querySelectorAll(".timeline button");
 
-buttons.forEach(button => {
+function showDay(dayNumber){
 
-    button.addEventListener("click", () => {
+    const day = itinerary.find(d => d.day === dayNumber);
 
-        const dayNumber = Number(button.dataset.day);
+    if(!day) return;
 
-        const day = itinerary.find(item => item.day === dayNumber);
+    itineraryBox.innerHTML = `
+        <h2>Day ${day.day} – ${day.city}</h2>
+        <h3>${day.title}</h3>
 
-        if (!day) return;
+        <ul>
+            ${day.attractions.map(place => `
+                <li>
+                    <strong>${place.name}</strong><br>
+                    ${place.type}
+                </li>
+            `).join("")}
+        </ul>
+    `;
 
-        itineraryBox.innerHTML = `
-            <h2>Day ${day.day} – ${day.city}</h2>
-            <h3>${day.title}</h3>
+    map.flyTo(day.coordinates, 12,{
+        duration:1.5
+    });
 
-            <ul>
-                ${day.activities.map(a => `<li>${a}</li>`).join("")}
-            </ul>
-        `;
+}
 
-        map.setView(day.coordinates, 12);
+buttons.forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        showDay(Number(button.dataset.day));
 
     });
 
 });
+
+// Show Day 1 automatically
+showDay(1);
