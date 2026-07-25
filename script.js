@@ -1,16 +1,37 @@
-const itinerary = [
 {
-day:1,
-city:"Milan",
-title:"Arrival & City Centre",
-lat:45.4642,
-lng:9.1900,
-places:[
-"Duomo di Milano",
-"Galleria Vittorio Emanuele II",
-"La Scala",
-"Navigli"
-]
+  day: 1,
+  city: "Milan",
+  title: "Arrival & Historic Centre",
+  lat: 45.4642,
+  lng: 9.1900,
+
+  travel: "Arrival in Milan and hotel check-in",
+
+  morning: [
+    "Arrive at Milan",
+    "Transfer to hotel",
+    "Check in and freshen up"
+  ],
+
+  afternoon: [
+    "Duomo di Milano",
+    "Climb the Duomo rooftop",
+    "Galleria Vittorio Emanuele II",
+    "La Scala Theatre"
+  ],
+
+  evening: [
+    "Walk through the Navigli district",
+    "Traditional Italian aperitivo by the canals"
+  ],
+
+  restaurant: "Rita & Cocktails",
+
+  budget: "£110–£150",
+
+  walking: "8 km",
+
+  tip: "Visit the Duomo rooftop about two hours before sunset for beautiful city views and shorter queues."
 },
 {
 day:2,
@@ -162,14 +183,37 @@ button.textContent="Day "+stop.day;
 button.onclick=()=>{
 
 map.flyTo([stop.lat,stop.lng],12);
+details.innerHTML = `
+<h2>🇮🇹 Day ${stop.day} – ${stop.city}</h2>
 
-details.innerHTML=`
-<h2>Day ${stop.day} – ${stop.city}</h2>
 <h3>${stop.title}</h3>
+
+<p><strong>🚄 Travel</strong><br>${stop.travel}</p>
+
+<p><strong>☀ Morning</strong></p>
 <ul>
-${stop.places.map(p=>`<li>${p}</li>`).join("")}
+${stop.morning.map(item => `<li>${item}</li>`).join("")}
 </ul>
+
+<p><strong>🌇 Afternoon</strong></p>
+<ul>
+${stop.afternoon.map(item => `<li>${item}</li>`).join("")}
+</ul>
+
+<p><strong>🌙 Evening</strong></p>
+<ul>
+${stop.evening.map(item => `<li>${item}</li>`).join("")}
+</ul>
+
+<p><strong>🍝 Restaurant</strong><br>${stop.restaurant}</p>
+
+<p><strong>💷 Budget</strong><br>${stop.budget}</p>
+
+<p><strong>👟 Walking</strong><br>${stop.walking}</p>
+
+<p><strong>💡 Tip</strong><br>${stop.tip}</p>
 `;
+
 
 };
 
