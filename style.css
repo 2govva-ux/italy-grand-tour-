@@ -1,0 +1,75 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    background:#f6f4ef;
+    color:#222;
+}
+
+header{
+    background:#8b1e2d;
+    color:white;
+    text-align:center;
+    padding:24px;
+}
+
+header h1{
+    font-size:2rem;
+    margin-bottom:8px;
+}
+
+header p{
+    opacity:.9;
+}
+
+#days{
+    display:flex;
+    overflow-x:auto;
+    gap:8px;
+    padding:12px;
+    background:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+#days button{
+    border:none;
+    border-radius:20px;
+    padding:10px 16px;
+    background:#8b1e2d;
+    color:white;
+    white-space:nowrap;
+    cursor:pointer;
+}
+
+#map{
+    height:50vh;
+    width:100%;
+}
+
+#details{
+    padding:20px;
+    line-height:1.6;
+    background:white;
+}
+
+#details h2{
+    margin-bottom:10px;
+    color:#8b1e2d;
+}
+
+#details ul{
+    padding-left:20px;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:#222;
+    color:white;
+}
