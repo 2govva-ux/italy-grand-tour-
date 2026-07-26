@@ -382,7 +382,11 @@ const route=[];
 
 attractions.forEach(place => {
 
-    const marker = L.marker(place.coords).addTo(map);
+    markers.push({
+    marker: marker,
+    place: place,
+    day: place.day
+});
 
 markers.push({
     marker,
