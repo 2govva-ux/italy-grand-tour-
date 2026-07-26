@@ -435,3 +435,22 @@ color:"#8B1E2D",
 weight:5
 }).addTo(map);
 const markers = []; 
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("input", () => {
+
+    const search = searchInput.value.toLowerCase();
+
+    markers.forEach(item => {
+
+        if(item.place.name.toLowerCase().includes(search)){
+
+            map.flyTo(item.place.coords,15);
+
+            item.marker.openPopup();
+
+        }
+
+    });
+
+});
