@@ -382,7 +382,12 @@ const route=[];
 
 attractions.forEach(place => {
 
-    L.marker(place.coords)
+    const marker = L.marker(place.coords).addTo(map);
+
+markers.push({
+    marker,
+    place
+});
         .addTo(map)
         .bindPopup(`
             <strong>${place.name}</strong><br>
@@ -429,3 +434,4 @@ L.polyline(route,{
 color:"#8B1E2D",
 weight:5
 }).addTo(map);
+const markers = []; 
