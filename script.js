@@ -411,6 +411,7 @@ btn.onclick=()=>{
 map.flyTo(stop.coords,12,{
 duration:1.5
 });
+showDayMarkers(stop.day);
 
 info.innerHTML=`
 <h2>Day ${stop.day} – ${stop.city}</h2>
@@ -458,3 +459,12 @@ searchInput.addEventListener("input", () => {
     });
 
 });
+function showDayMarkers(day) {
+    markers.forEach(item => {
+        if (item.day === day) {
+            item.marker.addTo(map);
+        } else {
+            map.removeLayer(item.marker);
+        }
+    });
+}
