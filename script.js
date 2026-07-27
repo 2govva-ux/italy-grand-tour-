@@ -68,3 +68,13 @@ itinerary.forEach(stop => {
   days.appendChild(button);
 
 });
+// Draw route
+const route = itinerary.map(stop => stop.coords);
+
+L.polyline(route, {
+  color: "#8B1E2D",
+  weight: 5
+}).addTo(map);
+
+// Show Day 1 automatically
+document.querySelector("#days button").click();
