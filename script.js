@@ -199,23 +199,34 @@ itinerary.forEach(day=>{
             duration:1.5
         });
 
-        info.innerHTML=`
+        info.innerHTML = `
 
-        <h2>Day ${day.day} – ${day.city}</h2>
+<h2>🇮🇹 Day ${day.day} – ${day.city}</h2>
 
-        <h3>${day.title}</h3>
+<p style="font-size:18px;font-weight:600;color:#8B1E2D;">
+${day.title}
+</p>
 
-        <p><strong>Travel:</strong> ${day.travel}</p>
+<p>
+🚄 <strong>Travel</strong><br>
+${day.travel}
+</p>
 
-        <h3>Highlights</h3>
+<hr>
 
-        <ul>
+<h3>✨ Highlights</h3>
 
-        ${day.items.map(item=>`<li>${item}</li>`).join("")}
+<ul>
+${day.items.map(item => `<li>${item}</li>`).join("")}
+</ul>
 
-        </ul>
+<hr>
 
-        `;
+<p style="color:#666;font-size:14px;">
+Enjoy your day exploring ${day.city}.
+</p>
+
+`;
 
     });
 
