@@ -381,12 +381,16 @@ type:"Archaeological Site"
 
 attractions.forEach(place=>{
 
-    L.circleMarker(place.coords,{
-        radius:6,
-        color:"#0B6E4F",
-        fillColor:"#2ECC71",
-        fillOpacity:0.9
-    })
+    const icon = L.divIcon({
+    className: "attraction-marker",
+    html: "📍",
+    iconSize: [24,24],
+    iconAnchor: [12,24]
+});
+
+L.marker(place.coords,{
+    icon: icon
+})
     .addTo(map)
     .bindPopup(`
         <strong>${place.name}</strong><br>
