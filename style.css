@@ -86,3 +86,58 @@ footer{
     border:1px solid #ccc;
     border-radius:8px;
 }
+/* ---------- Info Panel ---------- */
+
+#info{
+    background:#ffffff;
+    padding:20px;
+    margin:15px;
+    border-radius:16px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+    line-height:1.6;
+}
+
+#info h2{
+    color:#8B1E2D;
+    margin-bottom:6px;
+}
+
+#info h3{
+    color:#2E7D32;
+    margin-top:18px;
+    margin-bottom:8px;
+}
+
+#info ul{
+    padding-left:22px;
+}
+
+#info li{
+    margin-bottom:8px;
+}
+
+/* ---------- Day Buttons ---------- */
+
+#days{
+    display:flex;
+    overflow-x:auto;
+    gap:8px;
+    padding:12px;
+    background:#f8f8f8;
+}
+
+#days button{
+    border:none;
+    background:#8B1E2D;
+    color:white;
+    padding:10px 16px;
+    border-radius:30px;
+    cursor:pointer;
+    white-space:nowrap;
+    font-weight:600;
+    transition:.2s;
+}
+
+#days button:hover{
+    background:#A62639;
+}
