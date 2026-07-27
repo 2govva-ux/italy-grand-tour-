@@ -385,37 +385,41 @@ attractions.forEach(place=>{
 
 });// =====================================
 // Italy Grand Tour v2
-// Part 4 - Search
+// =====================================
+// Part 4 - Search (Fixed)
 // =====================================
 
 const searchInput = document.getElementById("searchInput");
 
 if (searchInput) {
 
-    searchInput.addEventListener("input", () => {
+    searchInput.addEventListener("input", function () {
 
-        const search = searchInput.value.trim().toLowerCase();
+        const text = this.value.trim().toLowerCase();
 
-        if (search.length < 2) return;
+        if (text === "") return;
 
-        const result = attractions.find(place =>
-            place.name.toLowerCase().includes(search)
-        );
+        for (const place of attractions) {
 
-        if (!result) return;
+            if (place.name.toLowerCase().includes(text)) {
 
-        map.flyTo(result.coords, 15, {
-            duration: 1.5
-        });
+                map.flyTo(place.coords, 15, {
+                    duration: 1.5
+                });
 
-        L.popup()
-            .setLatLng(result.coords)
-            .setContent(`
-                <strong>${result.name}</strong><br>
-                ${result.type}<br>
-                Day ${result.day}
-            `)
-            .openOn(map);
+                L.popup()
+                    .setLatLng(place.coords)
+                    .setContent(`
+                        <strong>${place.name}</strong><br>
+                        ${place.type}<br>
+                        Day ${place.day}
+                    `)
+                    .openOn(map);
+
+                break;
+            }
+
+        }
 
     });
 
