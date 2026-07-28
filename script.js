@@ -808,11 +808,90 @@ description:"One of Europe's most famous volcanoes, offering panoramic views ove
 
 attractions.forEach(place=>{
 
-    const icon = L.divIcon({
+    let emoji = "📍";
+
+switch (place.type) {
+
+    case "Cathedral":
+    case "Church":
+    case "UNESCO Church":
+    case "Basilica":
+    case "Chapel":
+        emoji = "⛪";
+        break;
+
+    case "Museum":
+    case "Art Museum":
+        emoji = "🏛";
+        break;
+
+    case "Castle":
+        emoji = "🏰";
+        break;
+
+    case "Bridge":
+    case "Historic Bridge":
+        emoji = "🌉";
+        break;
+
+    case "Panoramic Viewpoint":
+    case "Viewpoint":
+        emoji = "🌄";
+        break;
+
+    case "Historic Square":
+    case "UNESCO Square":
+        emoji = "🏟️";
+        break;
+
+    case "Opera House":
+        emoji = "🎭";
+        break;
+
+    case "Historic Shopping Gallery":
+        emoji = "🛍️";
+        break;
+
+    case "Historic Canal District":
+        emoji = "🌊";
+        break;
+
+    case "Tower":
+        emoji = "🗼";
+        break;
+
+    case "Ancient Amphitheatre":
+        emoji = "🏟️";
+        break;
+
+    case "Archaeological Park":
+    case "Archaeological Site":
+        emoji = "🏺";
+        break;
+
+    case "Volcano":
+        emoji = "🌋";
+        break;
+
+    case "UNESCO Landmark":
+    case "Landmark":
+        emoji = "📸";
+        break;
+
+    case "Airport":
+        emoji = "✈️";
+        break;
+
+    case "Station":
+        emoji = "🚉";
+        break;
+}
+
+const icon = L.divIcon({
     className: "attraction-marker",
-    html: "📍",
-    iconSize: [24,24],
-    iconAnchor: [12,24]
+    html: emoji,
+    iconSize: [28,28],
+    iconAnchor: [14,28]
 });
 
 L.marker(place.coords,{
