@@ -248,7 +248,9 @@ const attractions = [
 name:"Duomo di Milano",
 coords:[45.4642,9.1916],
 day:1,
-type:"Cathedral"
+type:"Cathedral",
+time:"1.5–2 hours",
+description:"Milan’s iconic Gothic cathedral. Climb the rooftop for one of the best views of the city."
 },
 
 {
@@ -393,10 +395,18 @@ L.marker(place.coords,{
 })
     .addTo(map)
     .bindPopup(`
-        <strong>${place.name}</strong><br>
-        ${place.type}<br>
-        Day ${place.day}
-    `);
+
+<h3>📍 ${place.name}</h3>
+
+<strong>${place.type}</strong><br><br>
+
+📅 Day ${place.day}<br>
+
+⏱ ${place.time || "Visit time varies"}<br><br>
+
+${place.description || "A highlight of your Italy Grand Tour."}
+
+`);
 
 });// =====================================
 // Italy Grand Tour v2
